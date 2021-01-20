@@ -7,7 +7,7 @@
     <depends>com.intellij.modules.xml</depends>
     <depends>JavaScript</depends>
     <depends>com.intellij.css</depends>
-    <depends optional="true" config-file="js-debugger.xml">JavaScriptDebugger</depends>
+    <depends optional="true" config-file="svelte-js-debugger.xml">JavaScriptDebugger</depends>
 
     <actions>
         <action class="dev.blachut.svelte.lang.actions.SvelteCreateComponentAction" id="SvelteCreateComponentAction">
@@ -80,6 +80,8 @@
         <!--suppress PluginXmlValidity -->
         <lang.inspectionSuppressor language="JavaScript"
                                    implementationClass="dev.blachut.svelte.lang.SvelteInspectionSuppressor"/>
+        <javascript.web.framework id="svelte" implementation="dev.blachut.svelte.lang.SvelteFramework"/>
+        <javascript.web.context framework="svelte" implementation="dev.blachut.svelte.lang.context.SvelteNodePackageContext"/>
     </extensions>
     <extensions defaultExtensionNs="JavaScript">
         <elementScopeProvider implementation="dev.blachut.svelte.lang.parsing.html.SvelteElementResolveScopeProvider"/>
